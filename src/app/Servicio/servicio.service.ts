@@ -1,19 +1,31 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Noticias } from '../modelo/noticias';
+import { Noticia } from '../modelo/noticias';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServicioService {
 
-  noticias: Noticias[]
-  noticias$: BehaviorSubject<Noticias[]>
+  noticias: Noticia[]
+  noticias$: BehaviorSubject<Noticia[]>
   constructor() { 
     this.noticias=[
-      new Noticias("Titulo","contenido",new Date())
+      new Noticia("Titulo","contenido",new Date())
     ]
 
-    this.noticias$=new BehaviorSubject<Noticias[]>(this.noticias);
+    this.noticias$=new BehaviorSubject<Noticia[]>(this.noticias);
+  }
+
+  agregarNoticias(titulo: string, contenido: string, fecha: Date){
+    this.noticias.unshift(new Noticia(titulo, contenido, fecha))
+  }
+
+  noticiasArray(){
+    return this.noticias
+  }
+
+  borrarNoticia(noticia: Noticia){
+    this.noticias=this.noticias.filter(n=>n.getid() != noticia.getid());
   }
 }

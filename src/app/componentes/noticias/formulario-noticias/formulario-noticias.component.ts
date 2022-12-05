@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ServicioService } from 'src/app/Servicio/servicio.service';
 
 @Component({
   selector: 'app-formulario-noticias',
@@ -7,11 +8,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./formulario-noticias.component.css']
 })
 export class FormularioNoticiasComponent implements OnInit {
+
   formNoticia!: FormGroup;
   formTitulo!: FormControl;
   formContenido!: FormControl;
-
-  constructor() { }
+  constructor(private servicio: ServicioService) { }
 
   ngOnInit(): void {
     this.crearComponentesFormulario();
@@ -28,5 +29,11 @@ export class FormularioNoticiasComponent implements OnInit {
         formTitulo: this.formTitulo,
         formContenido: this.formContenido
       })
+  }
+
+  AgregarNoticia(titulo: HTMLInputElement,contenido: HTMLInputElement) {
+    this.servicio.agregarNoticias(titulo.value,contenido.value,new Date());
+    titulo.value="";
+    contenido.value="";
   }
 }

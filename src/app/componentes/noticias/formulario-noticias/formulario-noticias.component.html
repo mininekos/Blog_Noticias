@@ -1,14 +1,18 @@
 
 <form [formGroup]="formNoticia">
     <div>
-        <input type="text" placeholder="Titulo">
+        <input type="text" placeholder="Titulo"
+        formControlName="formTitulo" #titulo>
+        <p *ngIf="formTitulo.errors?.['required']">Titulo necesario</p>
     </div>
     
     <br>
     <div>
-        <input type="text" placeholder="Noticia">
+        <input type="text" placeholder="Noticia"
+        formControlName="formContenido" #contenido>
+        <p *ngIf="formContenido.errors?.['required']">Contenido necesario</p>
     </div>
     
     <br>
-    <button> Agregar </button>
+    <button [disabled]="formNoticia.invalid" (click)="AgregarNoticia(titulo,contenido)"> Agregar </button>
 </form>
