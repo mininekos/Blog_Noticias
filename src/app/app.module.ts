@@ -6,6 +6,9 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { EstiloComponent } from './componentes/estilo/estilo.component';
 import { LoginComponent } from './componentes/login/login.component';
+import { NoticiasComponent } from './componentes/noticias/noticias.component';
+import { ListaNoticasComponent } from './componentes/noticias/lista-noticas/lista-noticas.component';
+import { FormularioNoticiasComponent } from './componentes/noticias/formulario-noticias/formulario-noticias.component';
 
 
 @NgModule({
@@ -13,6 +16,9 @@ import { LoginComponent } from './componentes/login/login.component';
     AppComponent,
     EstiloComponent,
     LoginComponent,
+    NoticiasComponent,
+    ListaNoticasComponent,
+    FormularioNoticiasComponent,
 
   ],
   imports: [

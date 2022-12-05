@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup,Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,8 +12,14 @@ export class LoginComponent implements OnInit {
   formularioPrincipal!: FormGroup;
   formUsuario!: FormControl;
   formContrasenna!: FormControl;
-  constructor() { }
 
+  constructor(private route: Router) { 
+
+  }
+
+  Pulsar(){
+    this.route.navigate(['noticias'])
+  }
   ngOnInit(): void {
     this.CrearComponentesFormularios();
     this.CrearFormulario();
