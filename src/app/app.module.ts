@@ -9,6 +9,8 @@ import { LoginComponent } from './componentes/login/login.component';
 import { NoticiasComponent } from './componentes/noticias/noticias.component';
 import { ListaNoticasComponent } from './componentes/noticias/lista-noticas/lista-noticas.component';
 import { FormularioNoticiasComponent } from './componentes/noticias/formulario-noticias/formulario-noticias.component';
+import { ConvertirAMayusculasPipe } from './Pipes/convertir-amayusculas.pipe';
+import { DetalleNoticiasComponent } from './componentes/detalle-noticias/detalle-noticias.component';
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import { FormularioNoticiasComponent } from './componentes/noticias/formulario-n
     NoticiasComponent,
     ListaNoticasComponent,
     FormularioNoticiasComponent,
+    ConvertirAMayusculasPipe,
+    DetalleNoticiasComponent,
 
   ],
   imports: [

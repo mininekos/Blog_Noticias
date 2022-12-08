@@ -12,7 +12,7 @@ export class NoticiasComponent implements OnInit {
   noticias!: Noticia[]
 
   constructor(private servicio: ServicioService) { 
-    this.noticias=servicio.noticiasArray();
+    this.servicio.noticiasArray$().subscribe(n=>this.noticias=n);
   }
 
   ngOnInit(): void {

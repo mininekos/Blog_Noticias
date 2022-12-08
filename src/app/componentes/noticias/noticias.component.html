@@ -3,9 +3,6 @@
 
 <br><br>
 <p>Hola</p>
-
-<div *ngFor="let noticia of noticias">
-    <app-lista-noticas></app-lista-noticas> 
-</div>
+<app-lista-noticas *ngFor="let n of noticias" [noticia]="n"></app-lista-noticas> 
 
 

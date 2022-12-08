@@ -1,1 +1,9 @@
-<p>lista-noticas works!</p>
+
+<div class="card card-block">
+    <h4>{{noticia.getTitulo()|convertirAMayusculas}}</h4>
+    <p>{{noticia.getContenido()}}</p>
+    <p>{{noticia.getFecha()|date}}</p>
+    <a class="btn btn-warning" (click)="mostrarDetalles()">Detalles</a>
+    <a class="btn btn-danger" (click)="eliminarNoticia()">Eliminar</a>
+</div>
+

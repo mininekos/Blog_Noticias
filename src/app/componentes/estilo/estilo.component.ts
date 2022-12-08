@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-estilo',
@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EstiloComponent implements OnInit {
 
-  constructor() { }
+  oscuro!: Boolean;
+  @Output() cambiarFondo = new EventEmitter<Boolean>();
 
-  ngOnInit(): void {
+  constructor() { 
+    
   }
 
+  ngOnInit(): void {
+    this.oscuro=false
+  }
+
+    cambiarEstado(){
+      this.oscuro=!this.oscuro
+      this.cambiarFondo.emit(this.oscuro)
+      
+    }
 }

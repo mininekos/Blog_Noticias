@@ -35,5 +35,6 @@ export class FormularioNoticiasComponent implements OnInit {
     this.servicio.agregarNoticias(titulo.value,contenido.value,new Date());
     titulo.value="";
     contenido.value="";
+    this.formNoticia.reset();
   }
 }

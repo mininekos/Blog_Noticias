@@ -18,4 +18,15 @@ export class Noticia {
         return this.id;
     }
 
+    getTitulo(): String{
+        return this.titulo
+    }
+
+    getContenido(): String{
+        return this.contenido
+    }
+
+    getFecha(): Date{
+        return this.fechaCreacion
+    }
 }
