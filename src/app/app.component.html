@@ -1,4 +1,5 @@
-<app-estilo></app-estilo>
+<app-estilo (cambiarFondo)="cambiarFondoPadre($event)"></app-estilo>
 
+<h3 [ngClass]="{'oscuro': oscuro,'claro': !oscuro}"> HOLA</h3>
 
-<router-outlet></router-outlet>
+<router-outlet [ngClass]="{'oscuro': oscuro,'claro': !oscuro}"></router-outlet>
